@@ -1,0 +1,24 @@
+name: Github Actions
+
+on:
+  push:
+    branches: [main]
+    
+  
+jobs:
+
+  echo-jobs:
+   runs-on: ubuntu-latest
+
+   steps:
+
+     - name: Github Message
+       run: echo "Github Is Working"
+       
+     - name: Current Date And Time
+       run: echo "Date $(date) Time $(date +%T)"
+
+     - name: The of the user of who pushed the commit
+       run: echo "The user who pushed the commit is ${{ github.actor }}"
+  
+  
