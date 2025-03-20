@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Check Repository
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
 
       - name: Print a Sample Message  
         run: echo "Hello World"
@@ -23,9 +23,10 @@ jobs:
 
       - name: Multiline message
         run: |
-          "This is a multi-line message."
-          "This is a multi-line message."
-          "This is a multi-line message."
+          echo "This is a multi-line message."
+          echo "This is another line."s
+  
+        
         
         
        
