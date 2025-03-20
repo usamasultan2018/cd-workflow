@@ -2,19 +2,20 @@ name: Github Actions
 
 on:
   push:
-     branches: [main]
-     
+    branches: [main]
 jobs:
-   echo-jobs:
-     runs-on: ubuntu-latest
+  build:
+    name: Build Backend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build Project
+        run: echo "Building project..."
+  test:
+     name: Test the backend
+     needs: build
+     runs-on: windows-latest
 
      steps:
-
-       - name: just print github 
-         run: echo "Hello, this is my second GitHub Action!"
-       - name: Current WD
-         run: echo "Current working directory:$(pwd)"
-       - name: List of files in wd
-         run: echo "List of files in the repo$(ls -la)"
-         
-   
+       - name: Run Test
+         run: echo "Running tests..."
